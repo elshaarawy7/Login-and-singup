@@ -1,0 +1,1 @@
+const KLogo = 'assets/image/LOGO.svg' ;
