@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:login_and_signup/const.dart';
+import 'package:login_and_signup/widgets/Logo_text.dart';
+import 'package:login_and_signup/widgets/app_color.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -9,16 +9,18 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white , 
-      body: Column(
+     body: Center(
+       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(height: 200,) ,
-          Align(
-            alignment: Alignment.topCenter,
-            child: SvgPicture.asset(KLogo ) , 
-            ) , 
+          SizedBox(height: 115) ,
+          LogoText() , 
+          
+        
+
         ],
-      ),
-    ) ;
+       ),
+     ),
+    );
   }
 }
