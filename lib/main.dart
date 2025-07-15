@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_and_signup/pages/solash_page.dart';
+import 'package:login_and_signup/widgets/OnboardingPages.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashPage(),// This trailing comma makes auto-formatting nicer for build methods.
+          home: OnboardingPages(),
     );
   }
 }
