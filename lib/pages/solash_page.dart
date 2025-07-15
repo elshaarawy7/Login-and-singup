@@ -28,7 +28,6 @@ class SplashPage extends StatelessWidget {
             Text("Lorem Ipsum is a dummy text " , style: TextStyle(
               color: Colors.black , 
               fontSize: 16 , 
-              
             ),) ,  
 
              
