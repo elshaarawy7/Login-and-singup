@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+
+class CustemTextField extends StatelessWidget {
+  CustemTextField({
+    super.key,
+    required this.hintText,
+    required this.obscureText,
+    required this.icon,
+  });
+
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  final String hintText;
+  final bool obscureText;
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFFF1F2F6),
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: TextField(
+        obscureText: obscureText,
+        controller: _usernameController,
+        style: const TextStyle(fontSize: 16),
+        decoration: InputDecoration(
+          hintText: hintText,
+          hintStyle: const TextStyle(
+            color: Color(0xFFBDC3C7),
+            fontSize: 16,
+          ),
+          prefixIcon: Icon(
+            icon, 
+            color: const Color(0xFFBDC3C7),
+            size: 22,
+          ),
+          border: InputBorder.none,
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 18,
+          ),
+        ),
+      ),
+    );
+  }
+}
