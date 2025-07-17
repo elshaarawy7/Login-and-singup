@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_and_signup/pages/Login_page.dart';
 import 'package:login_and_signup/widgets/Logo_text.dart';
 import 'package:login_and_signup/widgets/custem_batton.dart';
 import 'package:login_and_signup/widgets/custem_text_field.dart';
@@ -75,7 +76,9 @@ class _SingUpState extends State<SingUp> {
                     icon: Icons.lock_outline_rounded , 
                     ) ,
                   
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 16), 
+
+                 
                   
                   // Forgot password
                   Align(
@@ -95,8 +98,19 @@ class _SingUpState extends State<SingUp> {
                   
                   const SizedBox(height: 30),
                   
-                  // Login button
-                  CustemBatton() ,
+                  // Login button 
+
+                   CustemBatton( 
+                    text: "LOG IN",
+                    onPressed: () {
+                    if(formkey.currentState!.validate()){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return LoginPage() ;
+                      }));
+                    }
+                    },
+                  ) ,
+               
                   
                   const SizedBox(height: 40),
                   

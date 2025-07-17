@@ -19,7 +19,7 @@ class CustemTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFFF1F2F6),
+        color: const Color(0xFFF2F2F2),
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
@@ -33,7 +33,7 @@ class CustemTextField extends StatelessWidget {
         validator: (value) {
           if(value == null || value.isEmpty){
             return "Field is required";
-          } else if(value.length > 6) {
+          } else if(value.length < 6) {
             return "Field is required";
           } 
 
@@ -45,12 +45,12 @@ class CustemTextField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: const TextStyle(
-            color: Color(0xFFBDC3C7),
+            color: Colors.black,
             fontSize: 16,
           ),
           prefixIcon: Icon(
             icon, 
-            color: const Color(0xFFBDC3C7),
+            color:  Colors.black ,
             size: 22,
           ),
           border: InputBorder.none,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustemBatton extends StatelessWidget {
-  const CustemBatton({super.key});
+  const CustemBatton({super.key , this.onPressed , required this.text}); 
+
+  final void Function()? onPressed ;
+  final String text ;
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +27,7 @@ class CustemBatton extends StatelessWidget {
                     ],
                   ),
                   child: ElevatedButton(
-                    onPressed: () {
-                      // Handle login
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('تم الضغط على زر تسجيل الدخول'),
-                          backgroundColor: Color(0xFF27AE60),
-                        ),
-                      );
-                    },
+                    onPressed: onPressed ,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
                       shadowColor: Colors.transparent,
@@ -40,8 +35,8 @@ class CustemBatton extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
-                    child: const Text(
-                      'LOG IN',
+                    child:  Text(
+                      text,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
