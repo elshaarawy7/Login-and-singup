@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_and_signup/widgets/Logo_text.dart';
+import 'package:login_and_signup/widgets/custem_text_field.dart';
 
 class SingUp extends StatefulWidget {
   const SingUp({super.key});
@@ -54,93 +55,20 @@ class _SingUpState extends State<SingUp> {
                 const SizedBox(height: 40),
                 
                 // Username field
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF1F2F6),
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
-                        blurRadius: 10,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: TextField(
-                    controller: _usernameController,
-                    style: const TextStyle(fontSize: 16),
-                    decoration: InputDecoration(
-                      hintText: 'Username',
-                      hintStyle: const TextStyle(
-                        color: Color(0xFFBDC3C7),
-                        fontSize: 16,
-                      ),
-                      prefixIcon: const Icon(
-                        Icons.person_outline_rounded,
-                        color: Color(0xFFBDC3C7),
-                        size: 22,
-                      ),
-                      border: InputBorder.none,
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 18,
-                      ),
-                    ),
-                  ),
-                ),
+                CustemTextField(
+                  hintText: "Username", 
+                  obscureText: false,
+                  icon: Icons.person_outline_rounded, 
+                  ) ,
                 
                 const SizedBox(height: 20),
                 
                 // Password field
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF1F2F6),
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
-                        blurRadius: 10,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: TextField(
-                    controller: _passwordController,
-                    obscureText: _obscurePassword,
-                    style: const TextStyle(fontSize: 16),
-                    decoration: InputDecoration(
-                      hintText: 'Password',
-                      hintStyle: const TextStyle(
-                        color: Color(0xFFBDC3C7),
-                        fontSize: 16,
-                      ),
-                      prefixIcon: const Icon(
-                        Icons.lock_outline_rounded,
-                        color: Color(0xFFBDC3C7),
-                        size: 22,
-                      ),
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _obscurePassword 
-                            ? Icons.visibility_off_outlined 
-                            : Icons.visibility_outlined,
-                          color: const Color(0xFFBDC3C7),
-                          size: 22,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            _obscurePassword = !_obscurePassword;
-                          });
-                        },
-                      ),
-                      border: InputBorder.none,
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 18,
-                      ),
-                    ),
-                  ),
-                ),
+                
+                CustemTextField(hintText: "Password",
+                 obscureText: true,
+                  icon: Icons.lock_outline_rounded , 
+                  ) ,
                 
                 const SizedBox(height: 16),
                 
@@ -288,4 +216,58 @@ class _SingUpState extends State<SingUp> {
     _passwordController.dispose();
     super.dispose();
   }
-}
+} 
+
+/* 
+
+ Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF1F2F6),
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 10,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: TextField(
+                    controller: _passwordController,
+                    obscureText: _obscurePassword,
+                    style: const TextStyle(fontSize: 16),
+                    decoration: InputDecoration(
+                      hintText: 'Password',
+                      hintStyle: const TextStyle(
+                        color: Color(0xFFBDC3C7),
+                        fontSize: 16,
+                      ),
+                      prefixIcon: const Icon(
+                        Icons.lock_outline_rounded,
+                        color: Color(0xFFBDC3C7),
+                        size: 22,
+                      ),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscurePassword 
+                            ? Icons.visibility_off_outlined 
+                            : Icons.visibility_outlined,
+                          color: const Color(0xFFBDC3C7),
+                          size: 22,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _obscurePassword = !_obscurePassword;
+                          });
+                        },
+                      ),
+                      border: InputBorder.none,
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 18,
+                      ),
+                    ),
+                  ),
+                ), 
+
+                */
