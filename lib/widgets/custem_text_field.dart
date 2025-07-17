@@ -29,7 +29,16 @@ class CustemTextField extends StatelessWidget {
           ),
         ],
       ),
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if(value == null || value.isEmpty){
+            return "Field is required";
+          } else if(value.length > 6) {
+            return "Field is required";
+          } 
+
+          return null ;
+        },
         obscureText: obscureText,
         controller: _usernameController,
         style: const TextStyle(fontSize: 16),

@@ -13,7 +13,9 @@ class SingUp extends StatefulWidget {
 class _SingUpState extends State<SingUp> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
-  bool _obscurePassword = true;
+  bool _obscurePassword = true; 
+
+   GlobalKey<FormState> formkey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -21,142 +23,145 @@ class _SingUpState extends State<SingUp> {
       backgroundColor: const Color(0xFFF8F9FA),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32.0),
-            child: Column(
-              children: [
-                const SizedBox(height: 40),
-                
-                
-                LogoText() , 
-                
-                const SizedBox(height: 30),
-                
-                // Welcome text
-                const Text(
-                  'Welcome back!',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF2C3E50),
-                  ),
-                ),
-                
-                const SizedBox(height: 8),
-                
-                const Text(
-                  'Log in to existing LOGO account',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xFF7F8C8D),
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                
-                const SizedBox(height: 40),
-                
-                // Username field
-                CustemTextField(
-                  hintText: "Username", 
-                  obscureText: false,
-                  icon: Icons.person_outline_rounded, 
-                  ) ,
-                
-                const SizedBox(height: 20),
-                
-                // Password field
-                
-                CustemTextField(hintText: "Password",
-                 obscureText: true,
-                  icon: Icons.lock_outline_rounded , 
-                  ) ,
-                
-                const SizedBox(height: 16),
-                
-                // Forgot password
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: Color(0xFF7F8C8D),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      ),
+          child: Form(
+            key: formkey,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: Column(
+                children: [
+                  const SizedBox(height: 40),
+                  
+                  
+                  LogoText() , 
+                  
+                  const SizedBox(height: 30),
+                  
+                  // Welcome text
+                  const Text(
+                    'Welcome back!',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF2C3E50),
                     ),
                   ),
-                ),
-                
-                const SizedBox(height: 30),
-                
-                // Login button
-                CustemBatton() ,
-                
-                const SizedBox(height: 40),
-                
-                // Or sign up using
-                const Text(
-                  'Or sign up using',
-                  style: TextStyle(
-                    color: Color(0xFF7F8C8D),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                
-                const SizedBox(height: 25),
-                
-                // Social media buttons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("assets/image/Vector (2).png") , 
-                    SizedBox(width: 10,) , 
-                    Image.asset("assets/image/Group 32.png") , 
-                    SizedBox(width: 10,) ,  
-                    Image.asset("assets/image/Group 34.png")
-                    
-                  ],
-                ),
-                
-                const SizedBox(height: 40),
-                
-                // Sign up link
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Don't have an account? ",
-                      style: TextStyle(
-                        color: Color(0xFF7F8C8D),
-                        fontSize: 15,
-                      ),
+                  
+                  const SizedBox(height: 8),
+                  
+                  const Text(
+                    'Log in to existing LOGO account',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF7F8C8D),
+                      fontWeight: FontWeight.w400,
                     ),
-                    TextButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('الانتقال إلى صفحة التسجيل'),
-                            backgroundColor: Color(0xFF3498DB),
-                          ),
-                        );
-                      },
+                  ),
+                  
+                  const SizedBox(height: 40),
+                  
+                  // Username field
+                  CustemTextField(
+                    hintText: "Username", 
+                    obscureText: false,
+                    icon: Icons.person_outline_rounded, 
+                    ) ,
+                  
+                  const SizedBox(height: 20),
+                  
+                  // Password field
+                  
+                  CustemTextField(hintText: "Password",
+                   obscureText: true,
+                    icon: Icons.lock_outline_rounded , 
+                    ) ,
+                  
+                  const SizedBox(height: 16),
+                  
+                  // Forgot password
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {},
                       child: const Text(
-                        'Sign Up',
+                        'Forgot Password?',
                         style: TextStyle(
-                          color: Color(0xFF2C3E50),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          color: Color(0xFF7F8C8D),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
-                  ],
-                ),
-                
-                const SizedBox(height: 40),
-              ],
+                  ),
+                  
+                  const SizedBox(height: 30),
+                  
+                  // Login button
+                  CustemBatton() ,
+                  
+                  const SizedBox(height: 40),
+                  
+                  // Or sign up using
+                  const Text(
+                    'Or sign up using',
+                    style: TextStyle(
+                      color: Color(0xFF7F8C8D),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  
+                  const SizedBox(height: 25),
+                  
+                  // Social media buttons
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/image/Vector (2).png") , 
+                      SizedBox(width: 10,) , 
+                      Image.asset("assets/image/Group 32.png") , 
+                      SizedBox(width: 10,) ,  
+                      Image.asset("assets/image/Group 34.png")
+                      
+                    ],
+                  ),
+                  
+                  const SizedBox(height: 40),
+                  
+                  // Sign up link
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Don't have an account? ",
+                        style: TextStyle(
+                          color: Color(0xFF7F8C8D),
+                          fontSize: 15,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('الانتقال إلى صفحة التسجيل'),
+                              backgroundColor: Color(0xFF3498DB),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            color: Color(0xFF2C3E50),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  
+                  const SizedBox(height: 40),
+                ],
+              ),
             ),
           ),
         ),
